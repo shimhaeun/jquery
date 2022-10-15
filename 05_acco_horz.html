@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>accordion</title>
+<style type="text/css">
+    img{width:400px;height:300px}
+    ul,li{list-style:none;margin:0;padding:0}
+    
+    .accor ul{width:500px;height:300px;position:relative;
+        overflow:hidden}
+    .accor ul li{position:absolute;top:0;background:#000}
+    .accor ul li img{opacity:0.6}
+    .accor ul li img:hover{opacity:1}
+    
+    .acco1{left:0}
+    .acco2{left:50px}
+    .acco3{left:100px}
+</style>
+<script type="text/javascript" src="js/jquery-3.6.1.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".acco1").click(function(){
+        $(".acco2").animate({left:400});
+        $(".acco3").animate({left:450});
+    });
+    $(".acco2").click(function(){
+        $(".acco2").animate({left:50});
+        $(".acco3").animate({left:450});
+    });
+    $(".acco3").click(function(){
+        $(".acco2").animate({left:50});
+        $(".acco3").animate({left:100});
+    });
+});
+</script>
+</head>
+
+<body>
+<div class="accor">
+    <ul>
+        <li class="acco1">
+            <a href="#"><img src="images/img1.jpg"></a>
+        </li>
+        <li class="acco2">
+            <a href="#"><img src="images/img2.jpg"></a>
+        </li>
+        <li class="acco3">
+            <a href="#"><img src="images/img3.jpg"></a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
